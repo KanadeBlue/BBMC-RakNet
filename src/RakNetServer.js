@@ -43,7 +43,7 @@ class RakNetServer extends EventEmitter {
       try {
         this.handlePacket(new BinaryStream(msg), new InternetAddress(rinfo.address, rinfo.port, rinfo.family === 'IPv4' ? 4 : 6));
       } catch (err) {
-        console.error(`Failed to handle packet: ${err}`);
+        console.log(`Failed to handle packet: ${err}`);
       }
     });
     this.socket.bind(address.port, address.name);
